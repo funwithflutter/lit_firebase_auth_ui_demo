@@ -2,6 +2,7 @@ import 'package:animations/animations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
+import 'package:lit_firebase_ui_demo/config/palette.dart';
 import 'package:lit_firebase_ui_demo/screens/unauthenticated/widgets/register.dart';
 import 'package:lit_firebase_ui_demo/screens/unauthenticated/widgets/sign_in.dart';
 
@@ -19,7 +20,6 @@ class _UnauthenticatedState extends State<Unauthenticated>
   AnimationController _controller;
 
   ValueNotifier<bool> showSignInPage = ValueNotifier<bool>(true);
-  // bool showSignInPage = true;
 
   @override
   void initState() {
@@ -38,6 +38,14 @@ class _UnauthenticatedState extends State<Unauthenticated>
   Widget build(BuildContext context) {
     return Scaffold(
       body: LitAuth.custom(
+        errorNotification: const NotificationConfig(
+          backgroundColor: Palette.darkBlue,
+          icon: Icon(
+            Icons.error_outline,
+            color: Colors.deepOrange,
+            size: 32,
+          ),
+        ),
         child: Stack(
           children: [
             SizedBox.expand(
@@ -85,38 +93,6 @@ class _UnauthenticatedState extends State<Unauthenticated>
                                 },
                               ),
                       ),
-                      // AnimatedSwitcher(
-                      //   duration: const Duration(milliseconds: 1000),
-                      //   transitionBuilder: (child, animation) {
-                      //     return FadeThroughTransition(
-                      //       animation: animation,
-                      //       secondaryAnimation: ReverseAnimation(animation),
-                      //       fillColor: Colors.transparent,
-                      //       child: child,
-                      //     );
-                      //     // return SlideTransition(
-                      //     //   position: Tween<Offset>(
-                      //     //           begin: Offset(0, 1), end: Offset(0, 0))
-                      //     //       .animate(animation),
-                      //     //   child: child,
-                      //     // );
-                      //   },
-                      //   child: value
-                      //       ? SignIn(
-                      //           onRegisterClicked: () {
-                      //             context.resetSignInForm();
-                      //             showSignInPage.value = false;
-                      //             _controller.forward();
-                      //           },
-                      //         )
-                      //       : Register(
-                      //           onSignInPressed: () {
-                      //             context.resetSignInForm();
-                      //             showSignInPage.value = true;
-                      //             _controller.reverse();
-                      //           },
-                      //         ),
-                      // ),
                     );
                   },
                 ),
@@ -128,59 +104,3 @@ class _UnauthenticatedState extends State<Unauthenticated>
     );
   }
 }
-
-// class SignIn extends StatefulWidget {
-//   const SignIn({Key key}) : super(key: key);
-
-//   @override
-//   _SignInState createState() => _SignInState();
-// }
-
-// class _SignInState extends State<SignIn> with SingleTickerProviderStateMixin {
-//   AnimationController _controller;
-
-//   @override
-//   void initState() {
-//     _controller =
-//         AnimationController(vsync: this, duration: const Duration(seconds: 2));
-//     super.initState();
-//   }
-
-//   @override
-//   void dispose() {
-//     _controller.dispose();
-//     super.dispose();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Stack(children: [
-//       AnimatedBuilder(
-//         animation: _controller,
-//         builder: (context, child) => SizedBox.expand(
-//           child: CustomPaint(
-//             painter: BackgroundPainter(
-//               animation: _controller,
-//             ),
-//           ),
-//         ),
-//       ),
-//       SizedBox.expand(child: SignInTemp(controller: _controller))
-//     ]
-//         // child:
-//         //     SingleChildScrollView(child: SignInTemp(controller: _controller),),
-//         // Center(
-//         //   child: RaisedButton(
-//         //     onPressed: () {
-//         //       if (_controller.status == AnimationStatus.completed) {
-//         //         _controller.reverse();
-//         //       } else {
-//         //         _controller.forward();
-//         //       }
-//         //     },
-//         //     child: const Text('click'),
-//         //   ),
-//         // )
-//         );
-//   }
-// }
