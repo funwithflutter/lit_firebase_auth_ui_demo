@@ -13,19 +13,16 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Signed in'),
+      ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Signed in'),
-            RaisedButton(
-              onPressed: () {
-                context.signOut();
-                Navigator.of(context).push(AuthScreen.route);
-              },
-              child: const Text('Sign out'),
-            )
-          ],
+        child: RaisedButton(
+          onPressed: () {
+            context.signOut();
+            Navigator.of(context).push(AuthScreen.route);
+          },
+          child: const Text('Sign out'),
         ),
       ),
     );

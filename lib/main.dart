@@ -20,7 +20,12 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: GoogleFonts.muliTextTheme(),
           accentColor: Palette.darkOrange,
+          appBarTheme: const AppBarTheme(
+            brightness: Brightness.dark,
+            color: Palette.darkBlue,
+          ),
         ),
+
         // home: const LitAuthState(
         //   authenticated: Home(),
         //   unauthenticated: Unauthenticated(),

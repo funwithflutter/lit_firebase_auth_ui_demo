@@ -23,7 +23,11 @@ class SplashScreen extends StatelessWidget {
       initializing: (_) {},
     );
 
-    return const Center(child: CircularProgressIndicator());
+    return const Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
   }
 
   void _navigateToAuthScreen(BuildContext context) {
