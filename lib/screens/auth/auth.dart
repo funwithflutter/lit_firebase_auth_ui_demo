@@ -3,19 +3,21 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
 import 'package:lit_firebase_ui_demo/config/palette.dart';
-import 'package:lit_firebase_ui_demo/screens/unauthenticated/widgets/register.dart';
-import 'package:lit_firebase_ui_demo/screens/unauthenticated/widgets/sign_in.dart';
+import 'package:lit_firebase_ui_demo/main.dart';
+import 'package:lit_firebase_ui_demo/screens/auth/widgets/register.dart';
+import 'package:lit_firebase_ui_demo/screens/auth/widgets/sign_in.dart';
+import 'package:lit_firebase_ui_demo/screens/home.dart';
 
 import 'widgets/background_painter.dart';
 
-class Unauthenticated extends StatefulWidget {
-  const Unauthenticated({Key key}) : super(key: key);
+class AuthScreen extends StatefulWidget {
+  const AuthScreen({Key key}) : super(key: key);
 
   @override
-  _UnauthenticatedState createState() => _UnauthenticatedState();
+  _AuthScreenState createState() => _AuthScreenState();
 }
 
-class _UnauthenticatedState extends State<Unauthenticated>
+class _AuthScreenState extends State<AuthScreen>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
@@ -46,6 +48,13 @@ class _UnauthenticatedState extends State<Unauthenticated>
             size: 32,
           ),
         ),
+        onAuthSuccess: () {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) => const HomeScreen(),
+            ),
+          );
+        },
         child: Stack(
           children: [
             SizedBox.expand(

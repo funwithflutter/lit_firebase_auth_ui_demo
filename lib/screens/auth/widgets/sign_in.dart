@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
-import 'package:lit_firebase_ui_demo/screens/unauthenticated/widgets/decoration_functions.dart';
-import 'package:lit_firebase_ui_demo/screens/unauthenticated/widgets/sign_in_up_bar.dart';
+import 'package:lit_firebase_ui_demo/screens/auth/widgets/decoration_functions.dart';
+import 'package:lit_firebase_ui_demo/screens/auth/widgets/sign_in_up_bar.dart';
 
 import '../../../config/palette.dart';
 import 'title.dart';

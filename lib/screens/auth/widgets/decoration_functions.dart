@@ -31,7 +31,7 @@ InputDecoration signInInputDecoration({String hintText}) {
       borderSide: BorderSide(width: 2, color: Palette.darkBlue),
     ),
     enabledBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(width: 2.0, color: Palette.darkBlue),
+      borderSide: BorderSide(color: Palette.darkBlue),
     ),
     errorBorder: const UnderlineInputBorder(
       borderSide: BorderSide(color: Palette.darkOrange),
