@@ -6,6 +6,10 @@ import 'package:lit_firebase_ui_demo/screens/auth/auth.dart';
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key key}) : super(key: key);
 
+  static MaterialPageRoute get route => MaterialPageRoute(
+        builder: (context) => const SplashScreen(),
+      );
+
   @override
   Widget build(BuildContext context) {
     final user = context.watchSignedInUser();
@@ -24,21 +28,13 @@ class SplashScreen extends StatelessWidget {
 
   void _navigateToAuthScreen(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback(
-      (_) => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const AuthScreen(),
-        ),
-      ),
+      (_) => Navigator.of(context).pushReplacement(AuthScreen.route),
     );
   }
 
   void _navigateToHomeScreen(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback(
-      (_) => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const HomeScreen(),
-        ),
-      ),
+      (_) => Navigator.of(context).pushReplacement(HomeScreen.route),
     );
   }
 }

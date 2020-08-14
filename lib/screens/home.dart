@@ -6,6 +6,10 @@ import 'auth/auth.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key key}) : super(key: key);
 
+  static MaterialPageRoute get route => MaterialPageRoute(
+        builder: (context) => const HomeScreen(),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,11 +21,7 @@ class HomeScreen extends StatelessWidget {
             RaisedButton(
               onPressed: () {
                 context.signOut();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const AuthScreen(),
-                  ),
-                );
+                Navigator.of(context).push(AuthScreen.route);
               },
               child: const Text('Sign out'),
             )
