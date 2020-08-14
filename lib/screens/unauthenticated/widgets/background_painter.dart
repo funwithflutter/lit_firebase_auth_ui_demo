@@ -200,7 +200,7 @@ class Point {
   Point(this.x, this.y);
 }
 
-/// Custom curve to give gooye spring effect
+/// Custom curve to give gooey spring effect
 class SpringCurve extends Curve {
   const SpringCurve({
     this.a = 0.15,
