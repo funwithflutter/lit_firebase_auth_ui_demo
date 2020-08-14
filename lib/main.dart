@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lit_firebase_auth/lit_firebase_auth.dart';
-import 'package:lit_firebase_ui_demo/constants.dart';
+import 'package:lit_firebase_ui_demo/config/palette.dart';
 
 import 'screens/home.dart';
 import 'screens/unauthenticated/unauthenticated.dart';
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           visualDensity: VisualDensity.adaptivePlatformDensity,
           textTheme: GoogleFonts.muliTextTheme(),
-          accentColor: AppColors.darkOrange,
+          accentColor: Palette.darkOrange,
         ),
         home: const LitAuthState(
           authenticated: Home(),

@@ -3,19 +3,19 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../config/palette.dart';
 
 class BackgroundPainter extends CustomPainter {
   BackgroundPainter({
     Animation<double> animation,
   })  : bluePaint = Paint()
-          ..color = AppColors.lightBlue
+          ..color = Palette.lightBlue
           ..style = PaintingStyle.fill,
         greyPaint = Paint()
-          ..color = AppColors.darkBlue
+          ..color = Palette.darkBlue
           ..style = PaintingStyle.fill,
         orangePaint = Paint()
-          ..color = AppColors.orange
+          ..color = Palette.orange
           ..style = PaintingStyle.fill,
         linePaint = Paint()
           ..color = Colors.orange[300]

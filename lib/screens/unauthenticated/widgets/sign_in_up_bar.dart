@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:lit_firebase_ui_demo/constants.dart';
+import 'package:lit_firebase_ui_demo/config/palette.dart';
 
 class SignUpBar extends StatelessWidget {
   const SignUpBar({
@@ -65,7 +65,7 @@ class SignInBar extends StatelessWidget {
             label,
             style: const TextStyle(
               fontWeight: FontWeight.w800,
-              color: AppColors.darkBlue,
+              color: Palette.darkBlue,
               fontSize: 24,
             ),
           ),
@@ -98,7 +98,7 @@ class _LoadingIndicator extends StatelessWidget {
       child: Visibility(
         visible: isLoading,
         child: const LinearProgressIndicator(
-          backgroundColor: AppColors.darkBlue,
+          backgroundColor: Palette.darkBlue,
         ),
       ),
     );
@@ -118,8 +118,8 @@ class _RoundContinueButton extends StatelessWidget {
     return RawMaterialButton(
       onPressed: onPressed,
       elevation: 0.0,
-      fillColor: AppColors.darkBlue,
-      splashColor: AppColors.darkOrange,
+      fillColor: Palette.darkBlue,
+      splashColor: Palette.darkOrange,
       padding: const EdgeInsets.all(22.0),
       shape: const CircleBorder(),
       child: const Icon(

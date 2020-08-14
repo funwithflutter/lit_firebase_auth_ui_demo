@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lit_firebase_ui_demo/constants.dart';
+import 'package:lit_firebase_ui_demo/config/palette.dart';
 
 InputDecoration registerInputDecoration({String hintText}) {
   return InputDecoration(
@@ -13,10 +13,10 @@ InputDecoration registerInputDecoration({String hintText}) {
       borderSide: BorderSide(color: Colors.white),
     ),
     errorBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(color: AppColors.orange),
+      borderSide: BorderSide(color: Palette.orange),
     ),
     focusedErrorBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(width: 2.0, color: AppColors.orange),
+      borderSide: BorderSide(width: 2.0, color: Palette.orange),
     ),
     errorStyle: const TextStyle(color: Colors.white),
   );
@@ -28,17 +28,17 @@ InputDecoration signInInputDecoration({String hintText}) {
     hintStyle: const TextStyle(fontSize: 18),
     hintText: hintText,
     focusedBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(width: 2, color: AppColors.darkBlue),
+      borderSide: BorderSide(width: 2, color: Palette.darkBlue),
     ),
     enabledBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(width: 2.0, color: AppColors.darkBlue),
+      borderSide: BorderSide(width: 2.0, color: Palette.darkBlue),
     ),
     errorBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(color: AppColors.darkOrange),
+      borderSide: BorderSide(color: Palette.darkOrange),
     ),
     focusedErrorBorder: const UnderlineInputBorder(
-      borderSide: BorderSide(width: 2.0, color: AppColors.darkOrange),
+      borderSide: BorderSide(width: 2.0, color: Palette.darkOrange),
     ),
-    errorStyle: const TextStyle(color: AppColors.darkOrange),
+    errorStyle: const TextStyle(color: Palette.darkOrange),
   );
 }

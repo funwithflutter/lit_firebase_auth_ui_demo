@@ -3,7 +3,7 @@ import 'package:lit_firebase_auth/lit_firebase_auth.dart';
 import 'package:lit_firebase_ui_demo/screens/unauthenticated/widgets/decoration_functions.dart';
 import 'package:lit_firebase_ui_demo/screens/unauthenticated/widgets/sign_in_up_bar.dart';
 
-import '../../../constants.dart';
+import '../../../config/palette.dart';
 import 'title.dart';
 
 class SignIn extends StatelessWidget {
@@ -66,7 +66,7 @@ class SignIn extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 16,
                           decoration: TextDecoration.underline,
-                          color: AppColors.darkBlue,
+                          color: Palette.darkBlue,
                         ),
                       ),
                     ),
